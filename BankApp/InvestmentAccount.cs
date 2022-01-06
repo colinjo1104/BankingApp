@@ -5,19 +5,17 @@ namespace BankApp
     {
         private char _investmentAccountType;
 
+        //default constructor
         public InvestmentAccount()
         {
 
         }
-      
-
-        public InvestmentAccount(string owner, float balance, char investType) 
+        public InvestmentAccount(float balance, string owner, char investType) 
         {
-            _owner = owner;
             _balance = balance;
+            _owner = owner; 
             _investmentAccountType = investType;
-            _type = "InvestmentAccount";
-            
+            _type = "InvestmentAccount";    
         }
 
         public char Type
@@ -41,7 +39,7 @@ namespace BankApp
             else
                 return false;
         }
-
+        //transfer from Investment account to Investment account
         public override void transfer(InvestmentAccount dest, float amount)
         {
             if (isIndividual() && amount > 500)
@@ -50,6 +48,7 @@ namespace BankApp
                 base.transfer(dest, amount);
 
         }
+        //transfer from Investment to Checking account
         public override void transfer(Account dest, float amount)
         {
             if (isIndividual() && amount > 500)
