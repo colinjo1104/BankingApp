@@ -1,0 +1,14 @@
+/Users/cj/Projects/BankApp/BankApp/bin/Debug/net5.0/BankApp.deps.json
+/Users/cj/Projects/BankApp/BankApp/bin/Debug/net5.0/BankApp.runtimeconfig.json
+/Users/cj/Projects/BankApp/BankApp/bin/Debug/net5.0/BankApp.runtimeconfig.dev.json
+/Users/cj/Projects/BankApp/BankApp/bin/Debug/net5.0/BankApp.dll
+/Users/cj/Projects/BankApp/BankApp/bin/Debug/net5.0/ref/BankApp.dll
+/Users/cj/Projects/BankApp/BankApp/bin/Debug/net5.0/BankApp.pdb
+/Users/cj/Projects/BankApp/BankApp/obj/Debug/net5.0/BankApp.GeneratedMSBuildEditorConfig.editorconfig
+/Users/cj/Projects/BankApp/BankApp/obj/Debug/net5.0/BankApp.AssemblyInfoInputs.cache
+/Users/cj/Projects/BankApp/BankApp/obj/Debug/net5.0/BankApp.AssemblyInfo.cs
+/Users/cj/Projects/BankApp/BankApp/obj/Debug/net5.0/BankApp.csproj.CoreCompileInputs.cache
+/Users/cj/Projects/BankApp/BankApp/obj/Debug/net5.0/BankApp.dll
+/Users/cj/Projects/BankApp/BankApp/obj/Debug/net5.0/ref/BankApp.dll
+/Users/cj/Projects/BankApp/BankApp/obj/Debug/net5.0/BankApp.pdb
+/Users/cj/Projects/BankApp/BankApp/obj/Debug/net5.0/BankApp.genruntimeconfig.cache
