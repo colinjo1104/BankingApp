@@ -1,12 +1,12 @@
 ﻿using System;
 namespace BankApp
 {
-    public class Account
+    public abstract class Account : ITransaction
     {
         //class properties
         public float _balance;
         public string _owner;
-        public string _type;
+    
 
         //default constructor
         public Account()
@@ -15,35 +15,26 @@ namespace BankApp
 
         }
 
-        public Account(float balance, string owner, string type)
+        public Account(float balance, string owner)
         {
             _balance = balance;
-            _owner = owner;
-            _type = type;
+            _owner = owner;   
         }
 
+        
         public float Balance
         {
             get { return _balance; }
             set { _balance = value; }
         }
 
-        public virtual void deposit(float amount)
-        {
-            if (amount > 0)
-                _balance += amount;
-            else
-                Console.WriteLine("Deposit must be greater than 0");
-        }
+        public abstract void deposit(float amount);
 
-        public virtual void withdraw(float amount)
-        {
-            if (this.validBalance() && amount <= _balance)
-                _balance -= amount;
-            else
-                Console.WriteLine("Insufficient funds!");
 
-        }
+        public abstract void withdraw(float amount);
+
+        public abstract void transfer(Account dest, float amount);
+
         //checks to see if balance is less than 0
         public bool validBalance()
         {
@@ -53,39 +44,5 @@ namespace BankApp
                 return false;
         }
 
-        public virtual void transfer(Account dest, float amount)
-        {
-
-            if (this.Balance >= amount)
-            {
-                this.Balance = this.Balance - amount;
-                dest.Balance = dest.Balance + amount;
-            }
-            else
-            {
-                Console.WriteLine("Cannot Transfer perform transfer Insufficient funds!");
-            }
-        }
-
-       public virtual void transfer(InvestmentAccount dest, float amount)
-        {
-
-            if (this.Balance >= amount)
-            {
-                this.Balance = this.Balance - amount;
-                dest.Balance = dest.Balance + amount;
-            }
-            else
-            {
-                Console.WriteLine("Cannot Transfer perform transfer Insufficient funds!");
-            }
-
-
-
-
-
-
-
-        }
     }
 }

@@ -1,43 +1,30 @@
 ﻿<Properties StartupConfiguration="{119F6651-2C40-4E38-9D86-153D13B629F8}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="BankApp/Bank.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="BankApp/CheckingAccount.cs">
     <Files>
-      <File FileName="BankApp/Program.cs" Line="16" Column="38" />
-      <File FileName="BankApp/Account.cs" Line="65" Column="54" />
-      <File FileName="BankApp/InvestmentAccount.cs" Line="34" Column="17" />
-      <File FileName="BankApp.UnitTests/UnitTest1.cs" Line="8" Column="27" />
-      <File FileName="BankApp/Bank.cs" Line="1" Column="1" />
+      <File FileName="BankApp/Program.cs" Line="9" Column="1" />
+      <File FileName="BankApp/Account.cs" Line="46" Column="1" />
+      <File FileName="BankApp/InvestmentAccount.cs" Line="57" Column="10" />
+      <File FileName="BankApp/Bank.cs" Line="9" Column="23" />
+      <File FileName="BankApp.UnitTests/BankApp.UnitTests.cs" Line="4" Column="27" />
+      <File FileName="BankApp/EmptyInterface.cs" Line="11" Column="1" />
+      <File FileName="BankApp/CheckingAccount.cs" Line="4" Column="41" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="BankApp" expanded="True">
             <Node name="BankApp" expanded="True">
-              <Node name="Bank.cs" selected="True" />
+              <Node name="CheckingAccount.cs" selected="True" />
             </Node>
             <Node name="BankApp.UnitTests" expanded="True">
-              <Node name="Dependencies" expanded="True">
-                <Node name="PackageDependencies" expanded="True" />
-              </Node>
+              <Node name="Dependencies" expanded="True" />
             </Node>
           </Node>
-        </State>
-      </Pad>
-      <Pad Id="MonoDevelop.Debugger.WatchPad">
-        <State>
-          <Value>dest</Value>
         </State>
       </Pad>
       <Pad Id="MonoDevelop.UnitTesting.TestPad">
         <State name="__root__">
-          <Node name="BankApp" expanded="True">
-            <Node name="BankApp.UnitTests" expanded="True">
-              <Node name="BankApp.UnitTests" expanded="True">
-                <Node name="BankTests" expanded="True">
-                  <Node name="TransferMoneyfromCheckingToInvestmentIndividual" selected="True" />
-                </Node>
-              </Node>
-            </Node>
-          </Node>
+          <Node name="BankApp" expanded="True" selected="True" />
         </State>
       </Pad>
     </Pads>

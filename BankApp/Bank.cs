@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 
 namespace BankApp
 {
@@ -8,7 +9,7 @@ namespace BankApp
         //name of bank
         public string bankName;
         //list of accounts
-        public ArrayList accounts;
+        public List <Account> accounts;
 
         //default constructor
         public Bank()
@@ -16,7 +17,7 @@ namespace BankApp
             bankName = null;
             accounts = null;
         }
-        public Bank(string bankName, ArrayList list)
+        public Bank(string bankName, List<Account> list)
         {
             this.bankName = bankName;
             this.accounts = list;

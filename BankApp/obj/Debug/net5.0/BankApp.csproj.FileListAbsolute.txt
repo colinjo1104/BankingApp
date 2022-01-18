@@ -4,6 +4,7 @@
 /Users/cj/Projects/BankApp/BankApp/bin/Debug/net5.0/BankApp.dll
 /Users/cj/Projects/BankApp/BankApp/bin/Debug/net5.0/ref/BankApp.dll
 /Users/cj/Projects/BankApp/BankApp/bin/Debug/net5.0/BankApp.pdb
+/Users/cj/Projects/BankApp/BankApp/obj/Debug/net5.0/BankApp.csproj.AssemblyReference.cache
 /Users/cj/Projects/BankApp/BankApp/obj/Debug/net5.0/BankApp.GeneratedMSBuildEditorConfig.editorconfig
 /Users/cj/Projects/BankApp/BankApp/obj/Debug/net5.0/BankApp.AssemblyInfoInputs.cache
 /Users/cj/Projects/BankApp/BankApp/obj/Debug/net5.0/BankApp.AssemblyInfo.cs

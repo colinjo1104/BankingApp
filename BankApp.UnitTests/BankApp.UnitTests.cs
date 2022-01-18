@@ -11,7 +11,7 @@ namespace BankApp.UnitTests
         [Fact]
         public void Deposit_IntoCheckingAccountCorrect()
         {
-            Account acc1 = new Account(400, "Mike Johnson", "Checking");
+            Account acc1 = new CheckingAccount(400, "Mike Johnson");
 
             //Arrange
             float expected = 500;
@@ -25,7 +25,7 @@ namespace BankApp.UnitTests
         [Fact]
         public void Deposit_IntoInvestmentAccountCorrect()
         {
-            InvestmentAccount acc1 = new InvestmentAccount(400,"Chris Green",'C');
+            Account acc1 = new InvestmentAccount(400,"Chris Green",'I');
 
             //Arrange
             float expected = 500;
@@ -39,7 +39,7 @@ namespace BankApp.UnitTests
         [Fact]
         public void Deposit_IntoCheckingAccountNegativeAmount()
         {
-            Account acc1 = new Account(400, "Mike Johnson", "Checking");
+            Account acc1 = new CheckingAccount(400, "Mike Johnson");
 
             //Arrange
             float expected = 400;
@@ -52,7 +52,7 @@ namespace BankApp.UnitTests
         [Fact]
         public void Deposit_IntoInvestmentAccountNegativeAmount()
         {
-            InvestmentAccount acc1 = new InvestmentAccount(400, "Chris Green", 'C');
+            Account acc1 = new InvestmentAccount(400, "Chris Green", 'C');
 
             //Arrange
             float expected = 400;
@@ -66,7 +66,7 @@ namespace BankApp.UnitTests
         [Fact]
         public void Withdraw_fromAccount()
         {
-            Account acc1 = new Account(400, "Mike Johnson", "Checking");
+            Account acc1 = new CheckingAccount(400, "Mike Johnson");
 
             //Arrange
             float expected = 0;
@@ -79,7 +79,7 @@ namespace BankApp.UnitTests
         [Fact]
         public void Withdraw_fromAccountOver()
         {
-            Account acc1 = new Account(400, "Mike Johnson", "Checking");
+            Account acc1 = new CheckingAccount(400, "Mike Johnson");
 
             //Arrange
             float expected = 400;
@@ -92,7 +92,7 @@ namespace BankApp.UnitTests
         [Fact]
         public void Withdraw_fromInvestmentAccount()
         {
-            InvestmentAccount acc1 = new InvestmentAccount(400, "Mike Johnson",'I');
+            Account acc1 = new InvestmentAccount(400, "Mike Johnson",'I');
 
             //Arrange
             float expected = 200;
@@ -105,7 +105,7 @@ namespace BankApp.UnitTests
         [Fact]
         public void Withdraw_fromInvestmentAccountOver()
         {
-            InvestmentAccount acc1 = new InvestmentAccount(400, "Mike Johnson", 'I');
+            Account acc1 = new InvestmentAccount(400, "Mike Johnson", 'I');
 
             //Arrange
             float expected = 400;
@@ -118,8 +118,8 @@ namespace BankApp.UnitTests
         [Fact]
         public void TransferMoneyfromCheckingToInvestmentIndividual()
         {
-            Account acc1 = new Account(400, "Mike Johnson", "Checking");
-            InvestmentAccount acc2 = new InvestmentAccount(100, "Chris Green", 'I');
+            Account acc1 = new CheckingAccount(400, "Mike Johnson");
+            Account acc2 = new InvestmentAccount(100, "Chris Green", 'I');
             //Arrange
             float expected = 300;
             //Act
@@ -131,8 +131,8 @@ namespace BankApp.UnitTests
         [Fact]
         public void TransferMoneyfromCheckingToInvestmentIndividualOverdraft()
         {
-            Account acc1 = new Account(400, "Mike Johnson", "Checking");
-            InvestmentAccount acc2 = new InvestmentAccount(100, "Chris Green", 'I');
+            Account acc1 = new CheckingAccount(400, "Mike Johnson");
+            Account acc2 = new InvestmentAccount(100, "Chris Green", 'I');
             //Arrange
             float expected = 100;
             //Act
@@ -144,8 +144,8 @@ namespace BankApp.UnitTests
         [Fact]
         public void TransferMoneyfromInvestmentIndividualToChecking()
         {
-            Account acc1 = new Account(400, "Mike Johnson", "Checking");
-            InvestmentAccount acc2 = new InvestmentAccount(100, "Chris Green", 'I');
+            Account acc1 = new CheckingAccount(400, "Mike Johnson");
+            Account acc2 = new InvestmentAccount(100, "Chris Green", 'I');
             //Arrange
             float expected = 450;
             //Act
@@ -157,8 +157,8 @@ namespace BankApp.UnitTests
         [Fact]
         public void TransferMoneyfromInvestmentIndividualToCheckingOverLimit()
         {
-            Account acc1 = new Account(400, "Mike Johnson", "Checking");
-            InvestmentAccount acc2 = new InvestmentAccount(600, "Chris Green", 'I');
+            Account acc1 = new CheckingAccount(400, "Mike Johnson");
+            Account acc2 = new InvestmentAccount(600, "Chris Green", 'I');
             //Arrange
             float expected = 400;
             //Act
@@ -170,8 +170,8 @@ namespace BankApp.UnitTests
         [Fact]
         public void TransferMoneyfromInvestmentCorporateToChecking()
         {
-            Account acc1 = new Account(400, "Mike Johnson", "Checking");
-            InvestmentAccount acc2 = new InvestmentAccount(600, "Chris Green", 'C');
+            Account acc1 = new CheckingAccount(400, "Mike Johnson");
+            Account acc2 = new InvestmentAccount(600, "Chris Green", 'C');
             //Arrange
             float expected = 950;
             //Act

@@ -10,26 +10,31 @@ namespace BankApp
         {
 
         }
-        public InvestmentAccount(float balance, string owner, char investType) 
+        public InvestmentAccount(float balance, string owner,char investType) : base(balance, owner)
         {
-            _balance = balance;
-            _owner = owner; 
             _investmentAccountType = investType;
-            _type = "InvestmentAccount";    
         }
 
-        public char Type
-        {
+        public char AccountType
+        { 
             get { return _investmentAccountType; }
             set { _investmentAccountType = value; }
         }
 
         public override void withdraw(float amount)
         {
-            if (isIndividual() && amount <= 500)
-                base.withdraw(amount);
-            else if (!isIndividual())
-                base.withdraw(amount);     
+            //Check to see if withdrawl amount is more than current balance
+            if (amount <= this.Balance)
+            {
+                if (isIndividual() && amount <= 500)
+                    this.Balance = this.Balance - amount;
+                else if (isIndividual() && amount > 500)
+                    Console.WriteLine("Individual accounts cannot withdraw more than $500");
+                else
+                    this.Balance = this.Balance - amount;
+            }
+            else
+                Console.WriteLine("Withdrawal amount exceeds current balance");
         }
 
         public bool isIndividual()
@@ -39,25 +44,37 @@ namespace BankApp
             else
                 return false;
         }
-        //transfer from Investment account to Investment account
-        public override void transfer(InvestmentAccount dest, float amount)
-        {
-            if (isIndividual() && amount > 500)
-                Console.WriteLine("Individual investment accounts cannot transfer more then $500");
-            else
-                base.transfer(dest, amount);
 
+        public override void deposit(float amount)
+        {
+            if (amount > 0)
+                this.Balance += amount;
+            else
+                Console.WriteLine("Deposit must be greater than 0");
         }
-        //transfer from Investment to Checking account
+
         public override void transfer(Account dest, float amount)
         {
-            if (isIndividual() && amount > 500)
-                Console.WriteLine("Individual investment accounts cannot transfer more then $500");
+            if (isIndividual())
+            {
+                if (this.Balance >= amount && amount <= 500)
+                {
+                    this.Balance = this.Balance - amount;
+                    dest.Balance = dest.Balance + amount;
+                }
+                else
+                    Console.WriteLine("Cannot perform transfer due to insufficent funds or Transfer on Individual account exceeding $500");
+            }
             else
-                base.transfer(dest, amount);
-
+            {
+                if (this.Balance >= amount)
+                {
+                    this.Balance = this.Balance - amount;
+                    dest.Balance = dest.Balance + amount;
+                }
+                else
+                Console.WriteLine("Cannot Transfer perform transfer Insufficient funds!");
+            }
         }
-
-
     }
 }
